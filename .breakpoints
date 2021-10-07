@@ -1,11 +1,23 @@
 {
   "files": {
-    "menu.java": [
+    "Lab_2.java": [
       {
-        "id": "af129e14-5add-4434-ba33-95cdbc747cc1",
-        "line": 18,
-        "version": 658,
-        "index": 346
+        "id": "18442ab0-8f05-493e-bb1b-bc1bb157ebfe",
+        "line": 31,
+        "version": 2540,
+        "index": 580
+      },
+      {
+        "id": "bdc5de8a-a4e4-40c3-b753-bb8e76d6c583",
+        "line": 34,
+        "version": 2540,
+        "index": 679
+      },
+      {
+        "id": "de79f1c9-0b5d-4d94-8e0a-92f3512f7209",
+        "line": 70,
+        "version": 1627,
+        "index": 1618
       }
     ]
   }

@@ -29,13 +29,30 @@ public class menu {
       choice = getInput.integerSample("");
 
       if (choice == 1) {
-        
+        arrayFunctions.display(arraySample);
       } 
       else if (choice == 2) {
-        
+        boolean continueCycle = true;
+        int searchResult=-1;
+        do{
+          searchResult = arrayFunctions.search(arraySample, getInput.integerSample("\nWhat entry? "));
+
+          if (searchResult==-1){
+            System.out.println("status: not found");
+          }else{
+            System.out.println("status: found at position "+searchResult);
+          }
+
+          if (getInput.integerSample("another search (yes(1)/no(0))? ")==0){
+            continueCycle=false;
+          }
+          
+        }while(continueCycle);
+
       } 
       else if (choice == 3) {
-        
+        arraySample=arrayFunctions.smallest(arraySample);
+        arrayFunctions.display(arraySample);
       } 
       else if (choice == 4) {
         
