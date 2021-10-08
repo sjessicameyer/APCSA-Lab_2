@@ -1,9 +1,9 @@
-/** Heading  **********************************************/
-/*	Your name:
-		Class block: 				Date Started:
-		Lab Number:
-		Title:
-		Purpose:
+/** Manipulating Arrays**********************************************/
+/*	Your name: Sarah Meyer
+		Class block: G block			Date Started: 10/1 ?
+		Lab Number: 2
+		Title: Manipulating Arrays
+		Purpose: To gain proficiency implementing one-dimensional built-in arrays. 
 */
 
 import java.util.Scanner;
