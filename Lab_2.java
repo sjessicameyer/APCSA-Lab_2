@@ -39,6 +39,7 @@ public class Lab_2{
     for (var i = 0; i<copyFrom.length; i++){
       copyTo[i]=copyFrom[i];
     }
+    return copyFrom;
   }
 
   public int search(int[] array, int entry){
