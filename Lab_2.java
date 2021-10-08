@@ -27,11 +27,18 @@ public class Lab_2{
     }
 
     int[] revisedArray = new int[0];
-    revisedArray= array;
+    revisedArray= copyArray(array);
     revisedArray[0]=array[smallestItemPosition];
     revisedArray[smallestItemPosition]=array[0];
 
     return revisedArray;
+  }
+
+  public int[] copyArray(int[] copyFrom){
+    int[copyFrom.length] copyTo= new int[copyFrom.length]
+    for (var i = 0; i<copyFrom.length; i++){
+      copyTo[i]=copyFrom[i];
+    }
   }
 
   public int search(int[] array, int entry){
