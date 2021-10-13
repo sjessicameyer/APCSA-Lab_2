@@ -1,9 +1,9 @@
-/** Manipulating Arrays**********************************************/
-/*	Your name: Sarah Meyer
-		Class block: G block			Date Started: 10/1 ?
-		Lab Number: 2
+/** Manipulating Arrays  **********************************************/
+/*	Your name: Sarah
+		Class block: 	G block			Date Started: 10/1 ??
+		Lab Number: Lab 2
 		Title: Manipulating Arrays
-		Purpose: To gain proficiency implementing one-dimensional built-in arrays. 
+		Purpose: To gain proficiency implementing one-dimensional built-in arrays.
 */
 
 import java.util.Scanner;
@@ -28,18 +28,42 @@ public class Lab_2{
 
     int[] revisedArray = new int[0];
     revisedArray= copyArray(array);
+    
     revisedArray[0]=array[smallestItemPosition];
     revisedArray[smallestItemPosition]=array[0];
+    
+    System.out.print("\nSmallest element first: ");
+
+    System.out.print("\narray positions:");
+    for (var i = 0; i < revisedArray.length; i++){
+      for (var x = 0; x<4-customMath.countLength(i);x++){
+        System.out.print(" ");
+      }
+      System.out.print(" "+i);
+    }
+
+    System.out.print("\narray entries:  ");
+
+    for (var i = 0; i < revisedArray.length; i++){
+      for (var x = 0; x<4-customMath.countLength(revisedArray[i]);x++){
+        System.out.print(" ");
+      }
+      System.out.print(" "+revisedArray[i]);
+    }
+
+    System.out.print("\n\n");
 
     return revisedArray;
   }
 
-  public int[] copyArray(int[] copyFrom){
-    int[copyFrom.length] copyTo= new int[copyFrom.length]
-    for (var i = 0; i<copyFrom.length; i++){
-      copyTo[i]=copyFrom[i];
+  public int[] copyArray(int[] arrayFrom){
+    int[] arrayTo = new int[arrayFrom.length];
+
+    for (var i = 0; i<arrayFrom.length;i++){
+      arrayTo[i]=arrayFrom[i];
     }
-    return copyFrom;
+
+    return arrayTo;
   }
 
   public int search(int[] array, int entry){
@@ -83,5 +107,66 @@ public class Lab_2{
     }
 
     System.out.print("\n\n");
+  }
+
+  public int[] rotate(int[] array, int steps){
+    int[] revisedArray = new int[array.length];
+    for (var i = 0; i < array.length; i++){
+      int newLocation = i+steps;
+      do{
+        if (newLocation>=array.length){
+        newLocation=-1*(array.length-newLocation);
+        }
+        if (newLocation<0){
+          newLocation= array.length+newLocation;
+        }
+      }while((newLocation>=array.length)||(newLocation<0));
+      
+      revisedArray[newLocation]=array[i];
+    }
+
+    System.out.print("\nrotated array ");
+
+    System.out.print("\narray positions:");
+    for (var i = 0; i < revisedArray.length; i++){
+      for (var x = 0; x<4-customMath.countLength(i);x++){
+        System.out.print(" ");
+      }
+      System.out.print(" "+i);
+    }
+
+    System.out.print("\narray entries:  ");
+
+    for (var i = 0; i < revisedArray.length; i++){
+      for (var x = 0; x<4-customMath.countLength(revisedArray[i]);x++){
+        System.out.print(" ");
+      }
+      System.out.print(" "+revisedArray[i]);
+    }
+
+    System.out.print("\n\n");
+
+    return revisedArray;
+  }
+
+  public int[] delete(int[] array){
+    int revisedArrayLength = 0;
+    int nextSlot=0;
+    for (var i = 0;i<array.length; i++){
+      if(array[i]!=0){
+        revisedArrayLength++;
+      }
+    }
+
+    int[] revisedArray = new int[revisedArrayLength];
+
+    for (var i = 0;i<array.length; i++){
+      if(array[i]!=0){
+        revisedArray[nextSlot]=array[i];
+        nextSlot++;
+      }
+    }
+
+    return revisedArray;
   }
 }

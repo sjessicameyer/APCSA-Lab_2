@@ -48,24 +48,34 @@ public class menu {
           }
           
         }while(continueCycle);
-
+        System.out.print("\n");
       } 
       else if (choice == 3) {
         arraySample=arrayFunctions.smallest(arraySample);
-        arrayFunctions.display(arraySample);
       } 
       else if (choice == 4) {
-        
+        boolean continueCycle=true;
+        do{
+          arraySample=arrayFunctions.rotate(arraySample,getInput.integerSample("\nhow many steps? "));
+          
+          if (getInput.integerSample("rotate again? (yes(1)/no(0))? ")==0){
+            continueCycle=false;
+          }
+          
+        }while(continueCycle);
       } 
       else if (choice == 5) {
+        arrayFunctions.display(arrayFunctions.delete(arraySample));
+      }
+      else if (choice ==0){
         
       }
-      else if (choice == 0) {
-        
+      else{
+       throw new IndexOutOfBoundsException("The menu option "+choice+" does not exist.");
       }
       
     } while (choice != 0);
-    
+    System.out.println("Thank you for using my program");
   }
-
+  
 }
